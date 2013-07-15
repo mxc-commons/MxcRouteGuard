@@ -1,0 +1,66 @@
+<?php
+$mxcrouteguard = array(
+
+    /**
+     * Authentication Service to use
+     *
+     * Please specify the service manager registration key of the Authentication Service to use.
+     * The service should have implement public function hasIdentity() returning bool implemented.
+     * This is required but not checked.
+     * 
+     * default: zfcuser
+     */
+	 //'auth_service' => 'zfcuser_auth_service',
+		
+	 /**
+	 * Guard Mode
+	 * 
+	 * In blacklist mode all routes except the ones listed in the routes_observed list are accessibly wihout being authenticated.
+	 * In whitelist mode no route except the ones listed in the routes_observed list are accessibly wihout being authenticated.
+	 * 
+	 * accepted: 'white', 'black'
+	 */
+	 //'guard_mode' => 'white',
+
+	 /**
+	 * Strategy
+	 * 
+	 * By default MxcRouteGuards redirects attempts to access a protected route anonymously.
+	 * This behaviour is implemented as a RedirectStrategy.
+	 * 
+	 * If you want something else to happen, you can implement an alternative strategy
+	 * and specify it here
+	 * 
+	 */
+	 //strategy => 'MxcRouteGuard\Service\Strategy\RedirectStrategy',
+	 
+	 /**
+	 * List of routes to be observed
+	 * 
+	 * see Guard Mode
+	 * 
+	 */
+	 //'routes_observed' => array(),
+
+	/**
+	 * Route where to redirect anonymous users to if they access a protected route
+	 *
+	 * The route supplied here automatically gets whitelisted
+	 * The protected route the user wanted to access originally gets applied to the redirect route as parameter 'redirect'  
+	 * 
+	 */
+	 // 'anonymous_redirect' => 'zfcuser/login',
+);
+
+/**
+ * You do not need to edit below this line
+ */
+
+return array(
+	'mxcrouteguard' => $mxcrouteguard,
+	'service_manager' => array(
+		'aliases' => array(
+				'mxcrouteprotect_auth_service' => (isset($mxcrouteguard['auth_service'])) ? $mxcrouteguard['auth_service']: 'Zend\Authentication\AuthenticationService',
+		),
+	),
+);
