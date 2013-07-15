@@ -5,7 +5,7 @@ Version 0.0.1 Created by Frank Hein and the maxence team
 Introduction
 ------------
 
-MxcRouteGuard restricts access to routes by unauthenticated users.
+MxcRouteGuard restricts access to routes for unauthenticated users.
 Out of the box MxcRouteGuard works with ZfcUser, however, alternative authentication
 may be used as long as they provide a public function hasIdentity() returning bool.  
 MxcRouteGuard is designed to be very simple. 
@@ -74,33 +74,34 @@ The following options are available:
 
 - **auth_service** - Name of Authentication Service class to use. Useful for using your own
   authentication service instead of the default ZfcUser. Default is `zfcuser_auth_service`.
-- **guard_mode** - Two modes ('white', 'black') are provided to handle the observed routes list 
+- **guard_mode** - Two modes (`white`, `black`) are provided to handle the observed routes list 
   (see below). In whitelist mode all routes but the routes provided in the observed routes list
   are protected from anonymous access. In blacklist mode only the routes provided in the observed
-  route list are protected from anonymous acceess. Default is 'white'. 
-- **observed_routes** - List of routes to protect from anonymous success (black mode) or allow to
-  anonymous access (white mode)
+  route list are protected from anonymous acceess. Default is `white`. 
+- **observed_routes** - List of routes to protect from anonymous success (`black` mode) or allow to
+  anonymous access (`white` mode). Default: `array()`
 - **anonymous_redirect** - If access gets blocked the anonymous user gets redirected to the route
   specified here. Note: The anonymous_redirect route automatically gets whitelisted regardless of
-  the guard mode. Default: 'zfcuser/login'
+  the guard mode. Default: `zfcuser/login`
 - **strategy** - By default MxcRouteGuard redirects attempts to access protected routes by an
   anonymous user. If you want something else but a redirect to happen you may supply an alternative 
   strategy here to handle anonymous access.
+  Default: `MxcRouteGuard\Service\Strategy\RedirectStrategy`
 
 ZfcUser support
 ---------------
 
 If ZfcUser is used and the ZfcUser enable_registration flag is set true then MxcRouteGuard
-automatically whitelists 'zfcuser/register' regardless of the guard mode.
+automatically whitelists `zfcuser/register` regardless of the guard mode.
 
-In case a route gets blocked MxcRouteGuard applies a redirectto parameter to the anonymous_redirect
-route which can be used by ZfcUser, if the use_redirect_parameter_if_present setting is set true. 
+In case a route gets blocked MxcRouteGuard applies a `redirectto` parameter to the anonymous_redirect
+route which can be used by ZfcUser, if the `use_redirect_parameter_if_present` setting is set `true`. 
 
 Note
 ----
 
-For authenticated users MxcRouteGuard provides full access to all routes. If you need a more
-detailled control of who can access what route, use ZfcRbac or BjyAuthorize or similar modules
+For authenticated users MxcRouteGuard provides full access to all routes. If you need more
+detailled control of who can access what route, use [ZfcRbac](https://github.com/ZF-Commons/ZfcRbac) or [BjyAuthorize](https://github.com/bjyoungblood/BjyAuthorize) or similar modules
 instead of MxcRouteGuard.
 
 Common use cases for MxcRouteGuard are demo apps which only require a user to be known.
