@@ -8,10 +8,8 @@ by maxence business consulting gmbh, Germany.
 Introduction
 ------------
 
-MxcRouteGuard restricts access to routes for unauthenticated users.
-Out of the box MxcRouteGuard works with ZfcUser, however, alternative authentication
-may be used as long as they provide a public function hasIdentity() returning bool.  
-MxcRouteGuard is designed to be very simple. 
+MxcRouteGuard restricts access to routes for unauthenticated users. Out of the box MxcRouteGuard works with ZfcUser, however, alternative authentication
+may be used as long as they provide a `public function hasIdentity()` returning `bool`. MxcRouteGuard is designed to be very simple and reasonably extendable. 
 
 Requirements
 ------------
