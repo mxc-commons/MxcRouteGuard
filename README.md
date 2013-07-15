@@ -1,6 +1,9 @@
 MxcRouteGuard
 =============
-Version 0.0.1 Created by Frank Hein and the maxence team
+Version 0.0.1 created by Frank Hein and the mxc-commons team.
+
+MxcRouteGuard is part of the [maxence openBeee initiative](http://www.maxence.de/mxcweb/index.php/themen/open-business/)
+by maxence business consulting gmbh, Germany. 
 
 Introduction
 ------------
