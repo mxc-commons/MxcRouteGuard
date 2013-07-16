@@ -96,7 +96,7 @@ ZfcUser support
 If ZfcUser is used and the ZfcUser enable_registration flag is set true then MxcRouteGuard
 automatically whitelists `zfcuser/register` regardless of the guard mode.
 
-In case a route gets blocked MxcRouteGuard applies a `redirectto` parameter to the anonymous_redirect
+In case a route gets blocked MxcRouteGuard applies a `redirect` parameter to the anonymous_redirect
 route which can be used by ZfcUser, if the `use_redirect_parameter_if_present` setting is set `true`. 
 
 Note
