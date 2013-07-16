@@ -16,8 +16,7 @@ use RuntimeException;
 
 class Module implements AutoloaderProviderInterface
 {
-	protected $whitelist = array ('zfcuser/login');
-	
+
     public function getAutoloaderConfig()
     {
         return array(
