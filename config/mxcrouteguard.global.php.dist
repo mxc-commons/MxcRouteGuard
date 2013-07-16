@@ -32,7 +32,7 @@ $mxcrouteguard = array(
 	 * and specify it here
 	 * 
 	 */
-	 //strategy => 'MxcRouteGuard\Service\Strategy\RedirectStrategy',
+	 //'strategy' => 'MxcRouteGuard\Service\Strategy\RedirectStrategy',
 	 
 	 /**
 	 * List of routes to be observed
