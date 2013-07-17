@@ -107,3 +107,8 @@ detailled control of who can access what route, use [ZfcRbac](https://github.com
 instead of MxcRouteGuard.
 
 Common use cases for MxcRouteGuard are demo apps which only require a user to be known.
+
+License
+-------
+
+MxcRouteGuard is released under the New BSD License. See `license.txt`.
