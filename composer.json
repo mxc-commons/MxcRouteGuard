@@ -2,6 +2,7 @@
     "name": "mxc-commons/mxc-routeguard",
     "description": "Zend Framework 2 Module that provides protection for routes from anonymous access.",
     "type": "library",
+    "license": "BSD-3-Clause",
     "keywords": [
         "module",
         "zf2"
